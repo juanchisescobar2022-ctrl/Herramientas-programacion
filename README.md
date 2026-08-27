@@ -8,7 +8,7 @@
 <body>
 
   <header>
-    <h1>JAEM</h1>
+    <h1>JAJEMP</h1>
     <p>N.G (Nuestros Gustos)</p>
   </header>
 
