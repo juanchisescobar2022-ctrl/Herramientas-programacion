@@ -22,7 +22,7 @@
 
   <main>
     <section id="sobre">
-      <h2>Sobre JAEM</h2>
+      <h2>Sobre JAJPEM</h2>
       <p>Un pequeño resumen de nuestros gustos personales tanto de JE Y AM </p>
     </section>
     <section id="servicios">
