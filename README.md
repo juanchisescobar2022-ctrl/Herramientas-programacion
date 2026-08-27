@@ -8,7 +8,7 @@
 <body>
 
   <header>
-    <h1>JAJEMP</h1>
+    <h1>JAJPEM</h1>
     <p>N.G (Nuestros Gustos)</p>
   </header>
 
@@ -32,6 +32,8 @@
         <p>Me gustan los videojuegos,las peliculas y la musica. </p>
         <h3>A.M Alejandro Mora </h3>
         <p>Me gustan los videojuegos, escuchar musica, el deporte y el ejercicio. </p>
+        <h3>A.M Jacobo Henao </h3>
+         <p>Me gustan los videojuegos, las series y comer
       </article>
     </section>
   </main>
