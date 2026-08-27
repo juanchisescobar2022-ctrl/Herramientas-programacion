@@ -39,7 +39,7 @@
   </main>
 
   <footer>
-    <p>Hecho por Alejandro M y Juan Di · Grado 10°3</p>
+    <p>Hecho por Alejandro M, Juan Diego E y Jacobo H · Grado 10°3</p>
   </footer>
 
 </body>
