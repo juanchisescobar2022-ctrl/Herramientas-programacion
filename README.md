@@ -32,7 +32,7 @@
         <p>Me gustan los videojuegos,las peliculas y la musica. </p>
         <h3>A.M Alejandro Mora </h3>
         <p>Me gustan los videojuegos, escuchar musica, el deporte y el ejercicio. </p>
-        <h3>J.H Jacobo Henao </h3>
+        <h3>J.P Jacobo Henao </h3>
          <p>Me gustan los videojuegos, las series y comer
       </article>
     </section>
