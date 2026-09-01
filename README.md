@@ -1,4 +1,4 @@
-clase 2
+Proyecto
 <!DOCTYPE html>
 <html lang="es">
 <head>
