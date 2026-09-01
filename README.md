@@ -14,9 +14,9 @@ Proyecto
 
   <h2>Mis clases</h2>
   <ul>
-    <li><a href="https://github.com/juanchisescobar2022-ctrl/Tarea-1-Clase-1">Clase 1 — Sobre mí (primera página HTML)</a></li>
-    <li><a href="https://github.com/juanchisescobar2022-ctrl/Tarea-2-Clase-2">Clase 2 — Sobre la pagigina web</a></li>
-    <li><a href="https://github.com/juanchisescobar2022-ctrl/Tarea-3-Clase-3">Clase 3 — Informacion de la pagina en formato tabla</a></li>
+    <li><a href="https://github.com/juanchisescobar2022-ctrl/clase01">Clase 1 — Sobre mí (primera página HTML)</a></li>
+    <li><a href="https://github.com/juanchisescobar2022-ctrl/clase02">Clase 2 — Sobre la pagigina web</a></li>
+    <li><a href="https://github.com/juanchisescobar2022-ctrl/clase03">Clase 3 — Informacion de la pagina en formato tabla</a></li>
  
   </ul>
 
