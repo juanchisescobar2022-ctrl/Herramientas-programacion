@@ -2,95 +2,414 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clase 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    <title>Clase 2 · Videojuegos</title>
 
-    section {
-      min-height: 500px;
-      padding-top: 50px;
-    }
-  </style>
+    <style>
+        /* =========================
+           CONFIGURACIÓN
+        ========================= */
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background:
+                radial-gradient(circle at top, #062b45, transparent 45%),
+                linear-gradient(135deg, #02040a, #061522, #02040a);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            text-align: center;
+            padding: 45px 20px;
+
+            background: rgba(2, 10, 18, 0.9);
+
+            border-bottom: 2px solid #00eaff;
+
+            box-shadow:
+                0 5px 25px rgba(0, 234, 255, 0.4);
+        }
+
+        header h1 {
+            color: #00eaff;
+            font-size: 34px;
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 0 5px #00eaff,
+                0 0 15px #00eaff,
+                0 0 30px #008cff;
+        }
+
+        header p {
+            color: #bdefff;
+            font-size: 17px;
+        }
+
+        /* =========================
+           NAVEGACIÓN
+        ========================= */
+
+        nav {
+            background: rgba(3, 12, 22, 0.95);
+
+            border-bottom: 1px solid #0077ff;
+
+            box-shadow:
+                0 0 15px rgba(0, 140, 255, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            padding: 18px 20px;
+
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: inline-block;
+
+            padding: 12px 20px;
+
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+
+            background: linear-gradient(
+                135deg,
+                #081c2c,
+                #0b2d46
+            );
+
+            border: 1px solid #008cff;
+            border-radius: 10px;
+
+            box-shadow:
+                0 0 8px rgba(0, 140, 255, 0.4);
+
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #001018;
+
+            background: #00eaff;
+
+            border-color: #00eaff;
+
+            box-shadow:
+                0 0 10px #00eaff,
+                0 0 25px #008cff;
+
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        main {
+            width: 90%;
+            max-width: 950px;
+            margin: 45px auto;
+
+            flex: 1;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            min-height: 500px;
+            padding: 35px;
+            margin-bottom: 30px;
+
+            background: rgba(5, 18, 30, 0.9);
+
+            border: 1px solid #0077ff;
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 15px rgba(0, 140, 255, 0.4),
+                inset 0 0 20px rgba(0, 234, 255, 0.05);
+        }
+
+        section h2 {
+            color: #00eaff;
+            text-align: center;
+
+            margin-bottom: 25px;
+
+            font-size: 28px;
+
+            text-shadow:
+                0 0 10px #00eaff;
+        }
+
+        section > p {
+            color: #bdefff;
+
+            font-size: 17px;
+            line-height: 1.7;
+
+            text-align: center;
+        }
+
+        /* =========================
+           ARTÍCULOS
+        ========================= */
+
+        article {
+            padding: 22px;
+            margin: 20px 0;
+
+            background: linear-gradient(
+                135deg,
+                #081c2c,
+                #0b2d46
+            );
+
+            border: 1px solid #008cff;
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.5),
+                0 0 8px rgba(0, 140, 255, 0.3);
+
+            transition: 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+
+            border-color: #00eaff;
+
+            box-shadow:
+                0 0 10px #00eaff,
+                0 0 20px #008cff;
+        }
+
+        article h3 {
+            color: #00eaff;
+
+            margin-bottom: 10px;
+
+            font-size: 20px;
+
+            text-shadow:
+                0 0 8px #00eaff;
+        }
+
+        article p {
+            color: #bdefff;
+
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            background: #030a11;
+
+            border-top: 2px solid #0077ff;
+
+            box-shadow:
+                0 -5px 20px rgba(0, 140, 255, 0.3);
+
+            color: #8eefff;
+        }
+
+        footer p {
+            margin: 7px;
+        }
+
+        /* =========================
+           CELULARES
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            section {
+                padding: 22px;
+            }
+
+            section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
-  <header>
-    <h1>JAJPEM</h1>
-    <p>Información relevante</p>
-  </header>
+    <!-- =========================
+         ENCABEZADO
+    ========================= -->
 
-  <nav>
-    <ul>
-      <li>
-        <a href="#sobre">Sobre</a>
-      </li>
-
-      <li>
-        <a href="#servicios">Servicios</a>
-      </li>
-
-      <li>
-        <a href="../index.html">Volver a mi portada</a>
-      </li>
-    </ul>
-  </nav>
-
-  <main>
-
-    <section id="sobre">
-      <h2>Sobre</h2>
-
-      <p>
-        Se tratará sobre información de diferentes temas relacionados
-        con videojuegos, tanto actuales como clásicos.
-      </p>
-    </section>
+    <header>
+        <h1>🎮 JAJPEM 🎮</h1>
+        <p>Información relevante sobre videojuegos</p>
+    </header>
 
 
-    <section id="servicios">
-      <h2>Servicios</h2>
+    <!-- =========================
+         NAVEGACIÓN
+    ========================= -->
 
-      <article>
-        <h3>Alejandro M</h3>
+    <nav>
+        <ul>
+
+            <li>
+                <a href="#sobre">🎮 Sobre</a>
+            </li>
+
+            <li>
+                <a href="#servicios">🕹️ Servicios</a>
+            </li>
+
+            <li>
+                <a href="../index.html">← Volver a mi portada</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================= -->
+
+    <main>
+
+        <!-- SOBRE -->
+
+        <section id="sobre">
+
+            <h2>🎮 Sobre</h2>
+
+            <p>
+                Se tratará sobre información de diferentes temas
+                relacionados con videojuegos, tanto actuales como clásicos.
+            </p>
+
+        </section>
+
+
+        <!-- SERVICIOS -->
+
+        <section id="servicios">
+
+            <h2>🕹️ Servicios</h2>
+
+
+            <article>
+
+                <h3>👤 Alejandro M</h3>
+
+                <p>
+                    Me encargaré de enfocar mi información a juegos
+                    multijugador y cooperativos.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>👤 Juan Diego E</h3>
+
+                <p>
+                    Me encargaré de estudiar las físicas y gráficos
+                    de los videojuegos.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>👤 Jacobo Henao P</h3>
+
+                <p>
+                    Me encargaré de administrar las ganancias y ventas
+                    del juego.
+                </p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================= -->
+
+    <footer>
+
         <p>
-          Me encargaré de enfocar mi información a juegos
-          multijugador y cooperativos.
+            🎮 Hecho por Alejandro M, Juan Diego E y Jacobo Henao Piza
         </p>
-      </article>
 
-      <article>
-        <h3>Juan Diego E</h3>
         <p>
-          Me encargaré de estudiar las físicas y gráficos
-          de los videojuegos.
+            Grado 10°3 · Proyecto Gamer
         </p>
-      </article>
 
-      <article>
-        <h3>Jacobo Henao P</h3>
-        <p>
-          Me encargaré de administrar las ganancias y ventas
-          del juego.
-        </p>
-      </article>
-
-    </section>
-
-  </main>
-
-  <footer>
-    <p>
-      Hecho por Alejandro M, Juan Diego E y Jacobo Henao Piza · Grado 10°3
-    </p>
-  </footer>
+    </footer>
 
 </body>
 
 </html>
+```
+
+```
+
