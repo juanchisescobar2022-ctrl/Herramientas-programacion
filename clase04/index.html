@@ -1,40 +1,477 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clase 4</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clase 4 · Agregar una tarea</title>
+
+    <style>
+        /* =========================
+           CONFIGURACIÓN
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background:
+                radial-gradient(circle at top, #062b45, transparent 45%),
+                linear-gradient(135deg, #02040a, #061522, #02040a);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            text-align: center;
+            padding: 45px 20px;
+
+            background: rgba(2, 10, 18, 0.9);
+
+            border-bottom: 2px solid #00eaff;
+
+            box-shadow:
+                0 5px 25px rgba(0, 234, 255, 0.4);
+        }
+
+        header h1 {
+            color: #00eaff;
+            font-size: 34px;
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 0 5px #00eaff,
+                0 0 15px #00eaff,
+                0 0 30px #008cff;
+        }
+
+        header p {
+            color: #bdefff;
+            font-size: 17px;
+        }
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        main {
+            width: 90%;
+            max-width: 700px;
+            margin: 45px auto;
+
+            flex: 1;
+        }
+
+        /* =========================
+           TARJETA
+        ========================= */
+
+        .contenedor {
+            padding: 35px;
+
+            background: rgba(5, 18, 30, 0.9);
+
+            border: 1px solid #0077ff;
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 15px rgba(0, 140, 255, 0.4),
+                inset 0 0 20px rgba(0, 234, 255, 0.05);
+        }
+
+        .contenedor h2 {
+            color: #00eaff;
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-size: 28px;
+
+            text-shadow:
+                0 0 10px #00eaff;
+        }
+
+        /* =========================
+           FORMULARIO
+        ========================= */
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label,
+        form p {
+            color: #bdefff;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        textarea,
+        select,
+        input[type="date"] {
+            width: 100%;
+
+            padding: 13px;
+
+            color: white;
+            background: #081c2c;
+
+            border: 1px solid #008cff;
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            box-shadow:
+                0 0 8px rgba(0, 140, 255, 0.25);
+
+            transition: 0.3s ease;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #00eaff;
+
+            box-shadow:
+                0 0 8px #00eaff,
+                0 0 18px rgba(0, 140, 255, 0.5);
+        }
+
+        /* =========================
+           OPCIONES DE ESTADO
+        ========================= */
+
+        .estado {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            margin-top: 5px;
+            padding: 15px;
+
+            background: rgba(8, 28, 44, 0.8);
+
+            border: 1px solid #075a8f;
+            border-radius: 10px;
+        }
+
+        .estado label {
+            margin: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            accent-color: #00eaff;
+
+            transform: scale(1.2);
+
+            cursor: pointer;
+        }
+
+        /* =========================
+           BOTÓN
+        ========================= */
+
+        button {
+            margin-top: 25px;
+
+            padding: 16px;
+
+            color: #001018;
+            background: #00eaff;
+
+            border: none;
+            border-radius: 12px;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 10px #00eaff,
+                0 0 25px #008cff;
+
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-4px) scale(1.02);
+
+            background: white;
+
+            box-shadow:
+                0 0 15px white,
+                0 0 35px #00eaff;
+        }
+
+        /* =========================
+           VOLVER
+        ========================= */
+
+        .volver {
+            text-align: center;
+
+            margin-top: 30px;
+        }
+
+        .volver a {
+            color: #00eaff;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 0 8px #00eaff;
+
+            transition: 0.3s;
+        }
+
+        .volver a:hover {
+            color: white;
+
+            text-shadow:
+                0 0 10px white,
+                0 0 20px #00eaff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            background: #030a11;
+
+            border-top: 2px solid #0077ff;
+
+            box-shadow:
+                0 -5px 20px rgba(0, 140, 255, 0.3);
+
+            color: #8eefff;
+        }
+
+        footer p {
+            margin: 7px;
+        }
+
+        /* =========================
+           CELULARES
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .contenedor {
+                padding: 20px;
+            }
+
+            .estado {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
+
+
 <body>
-<section id="nueva">
-  <h2>Agregar una tarea</h2>
 
-  <form>
-    <label for="titulo">Pendientes</label>
-    <input type="text" id="titulo" name="titulo" required>
+    <!-- =========================
+         ENCABEZADO
+    ========================= -->
 
-    <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" name="descripcion"></textarea>
+    <header>
 
-    <label for="categoria">Categoría:</label>
-    <select id="categoria" name="categoria">
-      <option value="estudio">Estudio</option>
-      <option value="casa">Casa</option>
-      <option value="deporte">Deporte</option>
-      <option value="otro">Otro</option>
-    </select>
+        <h1>🧮 CLASE 4 · GESTOR DE TAREAS 🎮</h1>
 
-    <p>Estado:</p>
-    <input type="radio" id="pendiente" name="estado" value="pendiente">
-    <label for="pendiente">Pendiente</label>
-    <input type="radio" id="completada" name="estado" value="completada">
-    <label for="completada">Completada</label>
+        <p>
+            Herramientas de Programación I · Grado 10°
+        </p>
 
-    <label for="fecha">Fecha:</label>
-    <input type="date" id="fecha" name="fecha">
+    </header>
 
-    <button type="submit">Agregar tarea</button>
-  </form>
-</section>
+
+    <!-- =========================
+         CONTENIDO
+    ========================= -->
+
+    <main>
+
+        <section class="contenedor">
+
+            <h2>📝 Agregar una tarea</h2>
+
+
+            <!-- FORMULARIO -->
+
+            <form>
+
+                <label for="titulo">
+                    Pendientes
+                </label>
+
+                <input
+                    type="text"
+                    id="titulo"
+                    name="titulo"
+                    placeholder="Escribe el nombre de la tarea"
+                    required
+                >
+
+
+                <label for="descripcion">
+                    Descripción:
+                </label>
+
+                <textarea
+                    id="descripcion"
+                    name="descripcion"
+                    placeholder="Escribe una descripción..."
+                ></textarea>
+
+
+                <label for="categoria">
+                    Categoría:
+                </label>
+
+                <select id="categoria" name="categoria">
+
+                    <option value="estudio">
+                        Estudio
+                    </option>
+
+                    <option value="casa">
+                        Casa
+                    </option>
+
+                    <option value="deporte">
+                        Deporte
+                    </option>
+
+                    <option value="otro">
+                        Otro
+                    </option>
+
+                </select>
+
+
+                <p>
+                    Estado:
+                </p>
+
+                <div class="estado">
+
+                    <input
+                        type="radio"
+                        id="pendiente"
+                        name="estado"
+                        value="pendiente"
+                    >
+
+                    <label for="pendiente">
+                        Pendiente
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="completada"
+                        name="estado"
+                        value="completada"
+                    >
+
+                    <label for="completada">
+                        Completada
+                    </label>
+
+                </div>
+
+
+                <label for="fecha">
+                    Fecha:
+                </label>
+
+                <input
+                    type="date"
+                    id="fecha"
+                    name="fecha"
+                >
+
+
+                <button type="submit">
+                    🎮 Agregar tarea
+                </button>
+
+            </form>
+
+
+            <!-- VOLVER -->
+
+            <div class="volver">
+
+                <a href="../index.html">
+                    ← Volver a mi portada
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            🎮 Herramientas de Programación I
+        </p>
+
+        <p>
+            Grado 10° · Proyecto Gamer
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
