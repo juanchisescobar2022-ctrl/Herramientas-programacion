@@ -320,7 +320,7 @@
 
                 <li>
                     <a class="boton" href="clase06/index.html">
-                        🔒 Clase 6 — Próximamente
+                        🔒 Clase 6 — diseño
                     </a>
                 </li>
 
