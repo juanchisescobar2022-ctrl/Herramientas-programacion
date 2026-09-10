@@ -4,11 +4,217 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Gestor de Tareas</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+        radial-gradient(circle at top, #062b45, transparent 45%),
+        linear-gradient(135deg, #02040a, #061522, #02040a);
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 45px 20px;
+
+      background: rgba(2, 10, 18, 0.9);
+      border-bottom: 2px solid #00eaff;
+
+      box-shadow: 0 5px 25px rgba(0, 234, 255, 0.4);
+    }
+
+    header h1 {
+      color: #00eaff;
+      font-size: 36px;
+      margin-bottom: 12px;
+
+      text-shadow:
+        0 0 5px #00eaff,
+        0 0 15px #00eaff,
+        0 0 30px #008cff;
+    }
+
+    header p {
+      color: #bdefff;
+      font-size: 17px;
+    }
+
+    nav {
+      background: #030a11;
+      padding: 15px;
+      border-bottom: 1px solid #0077ff;
+      box-shadow: 0 0 15px rgba(0, 140, 255, 0.3);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 18px;
+
+      color: #00eaff;
+      text-decoration: none;
+
+      border: 1px solid #00b5e2;
+      border-radius: 8px;
+
+      background: #061522;
+
+      box-shadow: 0 0 8px rgba(0, 234, 255, 0.25);
+
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #00eaff;
+      color: #02040a;
+
+      box-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #008cff;
+
+      transform: translateY(-2px);
+    }
+
+    main {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      flex: 1;
+    }
+
+    section,
+    aside {
+      background: rgba(5, 18, 30, 0.9);
+      border: 1px solid #0077ff;
+      border-radius: 18px;
+      padding: 30px;
+      margin-bottom: 25px;
+
+      box-shadow:
+        0 0 15px rgba(0, 140, 255, 0.4),
+        inset 0 0 20px rgba(0, 234, 255, 0.05);
+    }
+
+    section h2,
+    aside h2 {
+      color: #00eaff;
+      text-align: center;
+      margin-bottom: 20px;
+
+      text-shadow: 0 0 10px #00eaff;
+    }
+
+    section > p {
+      text-align: center;
+      color: #bdefff;
+    }
+
+    article {
+      background: linear-gradient(135deg, #062b45, #0a1930);
+      border: 1px solid #00b5e2;
+      border-radius: 12px;
+
+      padding: 20px;
+      margin-top: 15px;
+
+      box-shadow: 0 0 10px rgba(0, 181, 226, 0.25);
+
+      transition: 0.3s;
+    }
+
+    article:hover {
+      transform: translateY(-4px);
+      border-color: #00eaff;
+
+      box-shadow:
+        0 0 15px rgba(0, 234, 255, 0.5),
+        0 0 30px rgba(0, 140, 255, 0.2);
+    }
+
+    article h3 {
+      color: #16e08c;
+      margin-bottom: 10px;
+      font-size: 20px;
+
+      text-shadow: 0 0 8px rgba(22, 224, 140, 0.5);
+    }
+
+    article p {
+      color: #d7f8ff;
+      line-height: 1.5;
+    }
+
+    aside {
+      text-align: center;
+    }
+
+    aside p {
+      color: #16e08c;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+
+      background: #030a11;
+      border-top: 2px solid #0077ff;
+
+      box-shadow: 0 -5px 20px rgba(0, 140, 255, 0.3);
+      color: #8eefff;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      main {
+        width: 94%;
+      }
+
+      section,
+      aside {
+        padding: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        width: 220px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <header>
-    <h1>Mi Gestor de Tareas</h1>
+    <h1>🎮 Mi Gestor de Tareas</h1>
     <p>Organiza lo que tienes que hacer</p>
   </header>
 
@@ -16,47 +222,49 @@
     <ul>
       <li><a href="#nueva">Nueva tarea</a></li>
       <li><a href="#lista">Mis tareas</a></li>
-      <li><a href="../index.html">Mi portada</a></li>
+      <li><a href="https://juanchisescobar2022-ctrl.github.io/Herramientas-programacion/index.html">Mi portada</a></li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- Aquí irá el formulario en la clase 4 -->
     <section id="nueva">
-      <h2>Agregar una tarea</h2>
+      <h2>➕ Agregar una tarea</h2>
       <p>Pronto aquí habrá un formulario para crear tareas.</p>
     </section>
 
-    <!-- Aquí se mostrarán las tareas con JavaScript -->
     <section id="lista">
-      <h2>Mis tareas</h2>
-      <article>
-        <h3> primera Tarea A.M</h3>
-        <p>informacion general de los videojuegos.estudio.Pendiente</p>
-      </article>
-      <article>
-        <h3>segunda tarea J.E</h3>
-        <p>informar sobre la jugabilidad · controles . Pendiente</p>
-      </article>
-    </section>
-     <article>
-        <h3>tercera tarea J.P</h3>
-        <p>informar sobre la jugabilidad · controles . Pendiente</p>
-      </article>
-    </section>
+      <h2>📋 Mis tareas</h2>
 
+      <article>
+        <h3>Primera tarea A.M</h3>
+        <p>Información general de los videojuegos · Estudio · Pendiente</p>
+      </article>
+
+      <article>
+        <h3>Segunda tarea J.E</h3>
+        <p>Informar sobre la jugabilidad · Controles · Pendiente</p>
+      </article>
+
+      <article>
+        <h3>Tercera tarea J.P</h3>
+        <p>Informar sobre la jugabilidad · Controles · Pendiente</p>
+      </article>
+
+    </section>
 
     <aside>
-      <h2>Resumen</h2>
+      <h2>📊 Resumen</h2>
       <p>Total de tareas: 3</p>
     </aside>
 
   </main>
 
   <footer>
-    <p>Proyecto de Juan Diego E,Ale Mora y Jaco piza · Herramientas de Programación I</p>
+    <p>Proyecto de Juan Diego E, Ale Mora y Jaco Piza · Herramientas de Programación I</p>
   </footer>
 
 </body>
 </html>
+```
+
