@@ -1,23 +1,318 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mí · Clase 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre mí · Clase 1</title>
+
+    <style>
+        /* =========================
+           CONFIGURACIÓN
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background:
+                radial-gradient(circle at top, #062b45, transparent 45%),
+                linear-gradient(135deg, #02040a, #061522, #02040a);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        header {
+            text-align: center;
+            padding: 45px 20px;
+
+            background: rgba(2, 10, 18, 0.9);
+
+            border-bottom: 2px solid #00eaff;
+
+            box-shadow:
+                0 5px 25px rgba(0, 234, 255, 0.4);
+        }
+
+        header h1 {
+            color: #00eaff;
+            font-size: 32px;
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 0 5px #00eaff,
+                0 0 15px #00eaff,
+                0 0 30px #008cff;
+        }
+
+        header p {
+            color: #bdefff;
+            font-size: 16px;
+        }
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        main {
+            width: 90%;
+            max-width: 950px;
+            margin: 45px auto;
+            flex: 1;
+        }
+
+        /* =========================
+           TARJETA PRINCIPAL
+        ========================= */
+
+        .contenedor {
+            padding: 35px;
+            margin-bottom: 30px;
+
+            background: rgba(5, 18, 30, 0.9);
+
+            border: 1px solid #0077ff;
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 15px rgba(0, 140, 255, 0.4),
+                inset 0 0 20px rgba(0, 234, 255, 0.05);
+        }
+
+        .contenedor h2 {
+            color: #00eaff;
+            text-align: center;
+            margin-bottom: 25px;
+
+            text-shadow: 0 0 10px #00eaff;
+        }
+
+        .contenedor p {
+            color: #bdefff;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        .seccion {
+            margin-top: 30px;
+            padding-top: 25px;
+
+            border-top: 1px solid #0077ff;
+        }
+
+        .seccion h2 {
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           BOTONES
+        ========================= */
+
+        .boton {
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            color: white;
+            background: linear-gradient(
+                135deg,
+                #081c2c,
+                #0b2d46
+            );
+
+            border: 1px solid #008cff;
+            border-radius: 12px;
+
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.5),
+                0 0 8px rgba(0, 140, 255, 0.4);
+
+            transition: 0.3s ease;
+        }
+
+        .boton:hover {
+            transform: translateY(-5px) scale(1.03);
+
+            background: linear-gradient(
+                135deg,
+                #073b5c,
+                #005ca8
+            );
+
+            border-color: #00eaff;
+
+            box-shadow:
+                0 0 10px #00eaff,
+                0 0 25px #008cff,
+                0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        /* =========================
+           VOLVER
+        ========================= */
+
+        .volver {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .volver a {
+            color: #00eaff;
+            text-decoration: none;
+            font-weight: bold;
+
+            text-shadow: 0 0 8px #00eaff;
+
+            transition: 0.3s;
+        }
+
+        .volver a:hover {
+            color: white;
+            text-shadow:
+                0 0 10px white,
+                0 0 20px #00eaff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            background: #030a11;
+
+            border-top: 2px solid #0077ff;
+
+            box-shadow:
+                0 -5px 20px rgba(0, 140, 255, 0.3);
+
+            color: #8eefff;
+        }
+
+        footer p {
+            margin: 7px;
+        }
+
+        /* =========================
+           CELULARES
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .contenedor {
+                padding: 20px;
+            }
+
+            .contenedor p {
+                font-size: 15px;
+            }
+
+            .boton {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Hola, soy Juan Di,Ale Mora y jaco piza</h1>
 
-  <p>Tengo 15 años y estudio grado décimo en tu colegio.</p>
-  <p>Nos guastan los videojuegos las peliculas y la musica y quiero aprender a programar para crear videojuegos y hacer una empresa.</p>
+    <!-- ENCABEZADO -->
 
-  <hr>
+    <header>
+        <h1>🎮 SOBRE MÍ · CLASE 1 🎮</h1>
+        <p>Herramientas de Programación I · Grado 10°</p>
+    </header>
 
-  <h2>Mi sitio favorito</h2>
-  <p><a href="https://www.tiktok.com/es/">tiktok</a></p>
 
-  <hr>
+    <!-- CONTENIDO -->
 
-  <p><a href="https://github.com/juanchisescobar2022-ctrl/clase-2/blob/main/README.md">← Volver a mi portada</a></p>
+    <main>
+
+        <section class="contenedor">
+
+            <h2>👋 Hola, somos Juan, Ale y Jaco</h2>
+
+            <p>
+                Tenemos 15 años y estudiamos grado décimo en nuestro colegio.
+            </p>
+
+            <p>
+                Nos gustan los videojuegos, las películas y la música.
+                Queremos aprender a programar para crear videojuegos
+                y hacer una empresa.
+            </p>
+
+
+            <!-- SITIO FAVORITO -->
+
+            <div class="seccion">
+
+                <h2>⭐ Mi sitio favorito</h2>
+
+                <a
+                    class="boton"
+                    href="https://www.tiktok.com/es/"
+                    target="_blank">
+                    🎵 TikTok
+                </a>
+
+            </div>
+
+
+            <!-- VOLVER -->
+
+            <div class="volver">
+
+                <a href="../index.html">
+                    ← Volver a mi portada
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>🎮 Herramientas de Programación I</p>
+        <p>Grado 10° · Proyecto Gamer</p>
+
+    </footer>
+
 </body>
+
 </html>
